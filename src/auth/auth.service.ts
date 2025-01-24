@@ -32,8 +32,25 @@ export class AuthService {
     }
   }
 
-  signin() {
-    console.log('🔥 :: singup ::');
-    return 'You are signed up';
+  async signin(dto: AuthDto) {
+    const user = await this.prisma.user.findUnique({
+      where: {
+        email: dto.email,
+      },
+    });
+
+    if (!user) {
+      throw new ForbiddenException('Credentials incorrect');
+    }
+
+    const pwMatches = await argon.verify(user.hash, dto.password);
+
+    if (!pwMatches) {
+      throw new ForbiddenException('Credentials incorrect');
+    }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { hash, ...userWithoutHash } = user;
+
+    return userWithoutHash;
   }
 }
