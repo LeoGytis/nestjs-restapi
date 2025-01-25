@@ -21,8 +21,20 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
       where: {
         id: payload.sub,
       },
+      select: {
+        id: true,
+        createdAt: true,
+        updatedAt: true,
+        email: true,
+        firstName: true,
+        lastName: true,
+        // Exclude 'hash' by not including it here
+      },
     });
-    // delete user.hash;
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // const { hash, ...sanitizedUser } = user;
+
     return user;
   }
 }
