@@ -28,8 +28,9 @@ NestJs CRUD REST API with end-to-end tests using modern web development techniqu
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Special Thanks
+## Thanks
 
-💻 Code: https://github.com/vladwulf/nestjs-ap...
-
-✏️ Course from Vladimir Agaev. Check out his YouTube channel: / @codewithvlad
+https://github.com/vladwulf
+https://www.youtube.com/channel/UCjmouj0JizYt0qTI53TAtFg
+Github: https://github.com/vladwulf/nestjs-api-tutorial/blob/main/prisma/schema.prisma
+Course: https://www.youtube.com/watch?v=GHTA143_b-s&ab_channel=freeCodeCamp.org
