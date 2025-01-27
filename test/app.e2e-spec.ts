@@ -131,5 +131,24 @@ describe('App e2e', () => {
         });
       });
     });
+
+    describe('Bookmarks', () => {
+      describe('Get empty bookmarks', () => {
+        it('should get bookmarks', () => {
+          return pactum
+            .spec()
+            .get('/bookmarks')
+            .withHeaders({
+              Authorization: 'Bearer $S{userAt}',
+            })
+            .expectStatus(200)
+            .expectBody([]);
+        });
+      });
+
+      // describe('Get empty bookmarks', () => {});
+      // describe('Get empty bookmarks', () => {});
+      // describe('Get empty bookmarks', () => {});
+    });
   });
 });
