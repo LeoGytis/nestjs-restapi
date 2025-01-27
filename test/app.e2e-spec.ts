@@ -1,11 +1,11 @@
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import * as pactum from 'pactum';
-import { AuthDto } from 'src/auth/dto';
+// import { AuthDto } from 'src/auth/dto';
 import { EditUserDto } from 'src/user/dto';
 import { AppModule } from '../src/app.module';
+import { AuthDto } from '../src/auth/dto';
 import { PrismaService } from '../src/prisma/prisma.service';
-// Check auto imports has to begni with '../'
 
 describe('App e2e', () => {
   let app: INestApplication;
